@@ -20,7 +20,6 @@ const AllEpisodesScreen: FC = props => {
   const getEpisodes = async () => {
     try {
       const response = await axios.get(`${API}episode/?page=${currentPage}`);
-      console.log(response);
       setTotalPages(response.data.info.pages);
       const newEpisodes = response.data.results;
       setEpisodesList([...episodesList, ...newEpisodes]);
